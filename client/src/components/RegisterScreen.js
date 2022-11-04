@@ -26,6 +26,12 @@ export default function RegisterScreen() {
             formData.get('password'),
             formData.get('passwordVerify')
         );
+
+        auth.getLoggedIn(
+            
+        );
+
+        console.log("Hi")
     };
 
     return (
