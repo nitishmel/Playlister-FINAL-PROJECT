@@ -44,6 +44,7 @@ const HomeScreen = () => {
                 color="primary" 
                 aria-label="add"
                 id="add-list-button"
+                
                 onClick={handleCreateNewList}
             >
                 <AddIcon />
