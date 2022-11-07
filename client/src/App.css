@@ -239,7 +239,7 @@ body {
 }
 
 input {
-  font-size: 20pt;
+  font-size: 10pt;
 }
 
 .top5-item,
@@ -276,12 +276,12 @@ input {
   justify-content: center;
   padding: 1rem;
   background: var(--black);
-  color: var(--swatch-text);
+  color: blueviolet/*var(--swatch-text)*/;
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
   transition: all 0.35s ease-in;
-  font-family: var(--font-primary);
+  font-family: Helvetica/*var(--font-primary)*/;
 }
 
 .modal.is-visible {
@@ -289,15 +289,67 @@ input {
   opacity: 1;
 }
 
+.modal-north{
+
+  font-size: 24pt;
+  margin-top: -10px;
+  text-align: center;
+  font-family: Georgia;
+  height: 40px;
+  background-color: rgb(0, 175, 200);
+  color: black;
+}
+
+.modal-prompt{
+  margin-top: 17px;
+  font-size: 12pt;
+  font-family: monospace;
+  color: white;
+}
+
+.modal-center-content{
+
+  font-size: 25pt;
+  font-family: monospace;
+  width: 400px;
+  height: 200px;
+  color: white;
+  transform: translateY(30px);
+  text-align: center;
+  margin-right: 0px;
+}
+
+.modal-button{
+
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 5px;
+  font-size: 15pt;
+}
+
+.modal-textfield{
+
+  margin-top: 10px;
+  font-size: 16pt;
+}
+.modal-center {
+
+  display: grid;
+  grid-template-columns: 30% 65%;
+  grid-template-rows: 33% 33% 33%;
+  gap: 10px 20px;
+  font-size: 18pt;
+}
+
 .modal-dialog {
   position: relative;
   max-width: 800px;
-  max-height: 80vh;
+  max-height: 30vh;
   background: var(--swatch-complement);
   overflow: auto;
   cursor: default;
   border-width: 5px;
-  border-radius: 10px;
+  border-radius: 15px;
   border-style: groove;
 }
 
@@ -315,6 +367,7 @@ input {
   align-items: center;
   justify-content: space-between;
   border-bottom: dotted;
+  font-size: 24pt;
 }
 
 .modal-header,

@@ -3,17 +3,19 @@ import GlobalStoreContext from '../store';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import { blue } from '@mui/material/colors';
 
 const style = {
     position: 'absolute',
-    top: '50%',
+    top: '30%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
+    width: 350,
+    height: 200,
+    bgcolor: '#123456',
+    border: '2px groove #000',
+    boxShadow: 60,
+    p: 10,
 };
 
 export default function MUIRemoveSongModal() {
@@ -38,7 +40,7 @@ export default function MUIRemoveSongModal() {
 
     return (
         <Modal
-            open={store.listMarkedForDeletion !== null}
+            open={store.songmarkedfordeletion === true}
         >
             <Box sx={style}>
             <div
@@ -51,7 +53,8 @@ export default function MUIRemoveSongModal() {
             </div>
             <div className="modal-center">
                 <div className="modal-center-content">
-                    Are you sure you wish to permanently remove {songTitle} from the playlist?
+                    Are you sure you wish to permanently remove {' '}
+                    <span style={{ fontWeight: 'bold'}}>{songTitle}</span> from the playlist?
                 </div>
             </div>
             <div className="modal-south">
