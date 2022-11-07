@@ -9,7 +9,7 @@ getLoggedIn = async (req, res) => {
             return res.status(200).json({
                 loggedIn: false,
                 user: null,
-                errorMessage: "?"
+                errorMessage: "?",
             })
         }
 
