@@ -17,8 +17,8 @@ export const AuthActionType = {
 
 function AuthContextProvider(props) {
 
-    //const { store } = useContext(GlobalStoreContext);
-    
+    const { store } = useContext(GlobalStoreContext);
+
     const [auth, setAuth] = useState({
         user: null,
         loggedIn: false,
@@ -141,15 +141,21 @@ function AuthContextProvider(props) {
         }
     }
 
-    auth.logoutUser = async function() {
-        const response = await api.logoutUser();
-        if (response.status === 200) {
-            authReducer( {
-                type: AuthActionType.LOGOUT_USER,
-                payload: null
-            })
-            history.push("/");
+    auth.logoutUser = function() {
+
+        async function logout() {
+            const response = await api.logoutUser();
+            if (response.status === 200) {
+                authReducer( {
+                    type: AuthActionType.LOGOUT_USER,
+                    payload: null
+                })
+                
+                history.push("/");
+            }
         }
+
+        logout();
     }
 
     auth.hideErrorModal = function() {
@@ -158,6 +164,7 @@ function AuthContextProvider(props) {
             type: AuthActionType.GET_LOGGED_IN,
             payload: {}
         })
+
     }
 
     auth.getUserInitials = function() {
